@@ -2,45 +2,43 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import Logo from "@/assets/buddi3-logo.png";
 
 export default function Header() {
     return (
         <header className="flex justify-between border border-[#7c7069]/20 w-full items-start px-3 py-2 pb-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center pl-2 pt-1 gap-2">
                 <Image
-                    src="/logo.png"
+                    src={Logo}
                     alt="로고"
-                    width={40}
-                    height={40}
+                    width={100}
+                    height={100}
+                    priority
                 />
-                <h1 className="text-[22px] font-bold mt-2 ml-2 text-black">
-                    발자국 리포트
-                </h1>
             </div>
 
-            <nav className="flex items-end gap-5 mt-4 mr-4">
+            <nav className="flex items-end gap-8 mt-4 mr-10">
                 <Link
                     href="/"
-                    className="text-[#555] text-[18px] font-medium hover:text-orange-500 transition-colors duration-200"
+                    className="text-[#555] text-[19px] font-medium hover:text-orange transition-colors duration-200"
                 >
                 홈
                 </Link>
                 <Link
                     href="/dashboard"
-                    className="text-[#555] text-[18px] font-medium hover:text-orange-500 transition-colors duration-200"
+                    className="text-[#555] text-[19px] font-medium hover:text-orange transition-colors duration-200"
                 >   
                 대시보드
                 </Link>
                 <Link
-                    href="/detail"
-                    className="text-[#555] text-[18px] font-medium hover:text-orange-500 transition-colors duration-200"
+                    href="/search"
+                    className="text-[#555] text-[19px] font-medium hover:text-orange transition-colors duration-200"
                 >  
                 검색
                 </Link>
                 <Link
                     href="/about"
-                    className="text-[#555] text-[18px] font-medium hover:text-orange-500 transition-colors duration-200"
+                    className="text-[#555] text-[19px] font-medium hover:text-orange transition-colors duration-200"
                 > 
                 소개
                 </Link>
