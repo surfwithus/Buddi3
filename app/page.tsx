@@ -6,7 +6,7 @@ import HomeSections from "./home/HomeSections";
 export default function Home() {
   // redirect("/detail");
   return (
-    <div className="min-h-screen bg-[#f9f8f6]">
+    <div className="min-h-screen bg-background">
       <Header />
       <HomeSections />
       <Footer />

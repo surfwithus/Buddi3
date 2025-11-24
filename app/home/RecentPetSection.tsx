@@ -10,10 +10,10 @@ export default function RecentPetSection() {
         <section className="px-40 py-20 bg-secondary/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-[45px] font-bold mb-4 text-foreground">
+              <h2 className="text-[45px] font-bold mb-4 text-black">
                 최근 등록된 보호 동물
               </h2>
-              <p className="text-xl">
+              <p className="text-xl text-brown">
                 새롭게 보호소에 등록된 동물들을 확인하세요
               </p>
             </div>
@@ -30,14 +30,14 @@ export default function RecentPetSection() {
                       />
                     </div>
                     <div className="p-6">
-                      <h4 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
+                      <h4 className="mb-2 text-xl font-bold text-black transition-colors group-hover:text-primary">
                         {animal.breed}
                       </h4>
-                      <p className="mb-2 text-sm text-muted-foreground">
+                      <p className="mb-2 text-sm text-brown">
                         <MapPin className="mr-1 inline h-4 w-4" />
                         {animal.location}
                       </p>
-                      <span className="inline-flex items-center rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground">
+                      <span className="inline-flex items-center rounded-full border border-border px-3 py-1 text-xs font-medium text-brown">
                         {animal.status}
                       </span>
                     </div>

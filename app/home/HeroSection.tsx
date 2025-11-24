@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/Button";
-import heroImage from "@/assets/hero-image.jpeg";
+import heroImage from "@/assets/hero-image1.jpg";
 import { Search, BarChart } from "lucide-react";
 
 export default function HeroSection() {
     return (
         <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage.src})` }}>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-300/70 to-orange-200/20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-orange/60 to-green/20" />
             </div>
 
             <div className="relative z-10 text-center text-white px-4">
