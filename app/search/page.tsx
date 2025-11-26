@@ -12,11 +12,11 @@ export default function Search() {
     return (
         <div className="min-h-screen bg-[#f9f8F6] text-black text-center">
             <Header />
-            <h1 className="font-black text-[50px] mt-15">
+            <h1 className="font-black text-[50px] pt-10">
                 유기동물 검색
             </h1>
-            <h3 className="font-medium text-gray-500 text-[20px] mb-7 ">
-                새로운 가족을 기다리는 아이들을 만나보세요
+            <h3 className="text-brown text-[21px] mt-1 mb-5">
+                새로운 가족을 기다리는 아이들을 지금 바로 만나보세요
             </h3>
             <SearchBar placeholder="품종, 지역, 색상, 상태 등으로 검색해보세요."/>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mx-[100px]">
