@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DetailFooter from "./DetailFooter";
-import DetailPetCard, { PetDetail } from "./DetailPetCard";
+import DetailPetCard, { PetDetail } from "../../../components/ui/DetailPetCard";
 
 export default function DetailPage({ params }: { params: Promise<{ petId: string }> }) {
     const { petId } = React.use(params);
