@@ -10,6 +10,7 @@ import Link from "next/link";
 
 export default function Search() {
     const [pets, setPets] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         const fetchPets = async () => {
@@ -34,6 +35,26 @@ export default function Search() {
         fetchPets();
     }, []);
 
+    const filteredPets = pets.filter((pet: any) => {
+        const term = searchTerm.toLowerCase();
+        const readableTags = pet.tags.map((tag: string) => {
+            if (tag === "M") return "수컷";
+            if (tag === "F") return "암컷";
+            if (tag === "Q") return "미상";
+            if (tag === "Y") return "중성화 완료";
+            if (tag === "N") return "중성화 미완";
+            return tag;
+        });
+
+        return (
+            pet.breed.toLowerCase().includes(term) ||
+            pet.location.toLowerCase().includes(term) ||
+            pet.color.toLowerCase().includes(term) ||
+            pet.status.toLowerCase().includes(term) ||
+            readableTags.some((tag: string) => tag.toLowerCase().includes(term))
+        );
+    });
+
     return (
         <div className="min-h-screen bg-[#f9f8F6] text-black text-center">
             <Header />
@@ -43,9 +64,14 @@ export default function Search() {
             <h3 className="text-brown text-[21px] mt-1 mb-5">
                 새로운 가족을 기다리는 아이들을 지금 바로 만나보세요
             </h3>
-            <SearchBar placeholder="품종, 지역, 색상, 상태 등으로 검색해보세요." />
+            <SearchBar
+                placeholder="품종, 지역, 색상, 상태 등으로 검색해보세요."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onSearch={() => { }}
+            />
             <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-9 mx-[120px]">
-                {pets.map((pet: any) => (
+                {filteredPets.map((pet: any) => (
                     <Link key={pet.id} href={`/detail/${pet.id}`}>
                         <PetCard {...pet} />
                     </Link>
