@@ -44,7 +44,7 @@ export default function Search() {
                 새로운 가족을 기다리는 아이들을 지금 바로 만나보세요
             </h3>
             <SearchBar placeholder="품종, 지역, 색상, 상태 등으로 검색해보세요." />
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mx-[100px]">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-9 mx-[120px]">
                 {pets.map((pet: any) => (
                     <Link key={pet.id} href={`/detail/${pet.id}`}>
                         <PetCard {...pet} />
